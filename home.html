@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Product list</title>
+  <meta name="author" content="Vu Duy Linh">
+  <link rel="icon" type="image/png" href="/image/shopping-cart.png">
+  <meta name="description" content="Shopping cart with HTML5, CSS3 and Vanilla JavaScript ES6+">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="wrapper">
+  <header class="page-header">
+    <a class="logo" href="/home.html"><img src="/image/vnsoftware.png" alt="logo"></a>
+    <h1>Danh sách sản phẩm (Hardcoded)</h1>
+    <nav class="mini-nav">
+      <div class="shopping-cart">
+        <p class="no-ordered-items">0</p>
+        <i class="icon-cart fa fa-shopping-cart"></i>
+      </div>
+      <div id="authentication">
+        <a href="/page/register.html">Đăng ký</a>
+        <a href="/page/login.html">Đăng nhập</a>
+      </div>
+      <div id="user-info" class="hidden">
+        <span id="principal"></span>
+        <a href="#" id="logout">Đăng xuất</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <article class="item">
+      <img class="item-image" src="/image/product-001.jpg" alt="product 1">
+      <div class="item-info">
+        <p class="item-id" hidden>001</p>
+        <h3 class="item-title">Áo sơ mi nam An Phước - ASN001282</h3>
+        <p class="item-price">867000</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-002.jpg" alt="product 2">
+      <div class="item-info">
+        <p class="item-id" hidden>002</p>
+        <h3 class="item-title">Đầm voan, vạt tà chéo - MMOutfit </h3>
+        <p class="item-price">799999</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-003.jpg" alt="product 3">
+      <div class="item-info">
+        <p class="item-id" hidden>003</p>
+        <h3 class="item-title">Áo sơ mi nam cao cấp công sở Hoàn Mỹ</h3>
+        <p class="item-price">678900</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-004.jpg" alt="product 4">
+      <div class="item-info">
+        <p class="item-id" hidden>004</p>
+        <h3 class="item-title">Giày thể thao bé gái - GVBG.74 - BITAS </h3>
+        <p class="item-price">170000</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-005.jpg" alt="product 5">
+      <div class="item-info">
+        <p class="item-id" hidden>005</p>
+        <h3 class="item-title">Giày thể thao bé trai - ASN001282</h3>
+        <p class="item-price">356800</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-006.jpg" alt="Gấu nhồi bông">
+      <div class="item-info">
+        <p class="item-id" hidden>006</p>
+        <h3 class="item-title">Gấu nhồi bông cao cấp cho bé - Babybear</h3>
+        <p class="item-price">249000</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-007.jpg" alt="product 7">
+      <div class="item-info">
+        <p class="item-id" hidden>007</p>
+        <h3 class="item-title">Váy ly bèo lưng - K38 K38 Comayca </h3>
+        <p class="item-price">679000</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+    <article class="item">
+      <img class="item-image" src="/image/product-008.jpg" alt="product 8">
+      <div class="item-info">
+        <p class="item-id" hidden>008</p>
+        <h3 class="item-title">Váy liền mẫu nữ Chiffon hoa - Kelly Bui</h3>
+        <p class="item-price">4099000</p>
+      </div>
+      <a href="#" class="add-cart">Add to cart</a>
+    </article>
+
+  </main>
+
+  <footer class="page-footer"> &copy; vdlinh@ctu.edu.vn, 2021</footer>
+
+  <script src="/js/product-list.js"></script>
+  <script src="/js/authentication.js"></script>
+  <script>
+    // Kiểm tra xác thực khi tải trang [cần khi chuyển trang qua lại]
+    checkAuthentication();
+  </script>
+
+</body>
+
+</html>
