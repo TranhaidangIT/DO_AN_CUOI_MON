@@ -278,3 +278,21 @@ button:hover {
   color: blue;
   font-weight: bold;
 }
+/*// css gio hang */
+.list-body td button {
+  display: inline-block;
+  width: 30px;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+background-color: #17A2B8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.list-body td button:hover {
+  background-color: green;
+  color: yellow;
+  font-weight: bold;
+  border-radius: 5px;
+}

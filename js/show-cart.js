@@ -11,8 +11,8 @@ function showCart() {  // được gọi từ show-cart.html
     const tblHFoot = document.getElementsByTagName('tfoot')[0];
 
     let headColumns = bodyRows = footColumns = '';
-    headColumns += '<tr><th>No</th><th>Item Id</th><th>Item Name</th>' +
-      '<th>Quantity</th><th>Item Price</th><th>Delete</th></tr>';
+    headColumns += '<tr><th>Số thứ tự</th><th>Mã sản phấm</th><th>Tên sản phẩm</th>' +
+      '<th>Số lượng</th><th>Số tiền</th><th>Xóa sản phẩm</th></tr>';
     tblHead.innerHTML = headColumns;
 
     vat = total = amountPaid = no = 0;
@@ -22,7 +22,11 @@ function showCart() {  // được gọi từ show-cart.html
       custommerCart.forEach(item => {
         total += Number(item.quantity) * Number(item.price.replace(/[^0-9]/g, ""));
         bodyRows += '<tr><td>' + ++no + '</td><td>' + item.id + '</td><td>' + item.name +
-          '</td><td>' + item.quantity + '</td><td>' +
+          '</td><td>' +
+            '<button class="btn-minus">-</button> ' +
+            item.quantity +
+            ' <button class="btn-plus">+</button>' +
+          '</td><td>' +
           formatCurrency(item.price.replace(/[^0-9]/g, "")) +
           '</td><td><a href="#" onclick="deleteCartItem(this)">Delete</a></td></tr>';
       });
@@ -47,6 +51,37 @@ function deleteCartItem(elmt) {
   localStorage.setItem('cartItems', JSON.stringify(updatedDeleteCart));
   location.reload();  // reload the current page
 }
+function changeQuantity(itemId, change) {
+  let custommerCart = JSON.parse(localStorage.getItem('cartItems'));
+
+  custommerCart.forEach(item => {
+    if (item.id == itemId) {
+      let newQuantity = Number(item.quantity) + change;
+
+      if (newQuantity >= 1) {
+        item.quantity = newQuantity;
+      }
+    }
+  });
+
+  localStorage.setItem('cartItems', JSON.stringify(custommerCart));
+
+  showCart();
+}
+
+document.querySelector('.list-body').addEventListener('click', function(event) {
+
+  if (event.target.className == 'btn-plus') {
+    let itemId = event.target.parentElement.parentElement.children[1].textContent;
+    changeQuantity(itemId, 1);
+  }
+
+  if (event.target.className == 'btn-minus') {
+    let itemId = event.target.parentElement.parentElement.children[1].textContent;
+    changeQuantity(itemId, -1);
+  }
+
+});
 
 //------------Currency & Percentage format-------------------------
 
