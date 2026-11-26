@@ -1,12 +1,13 @@
-
-
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- [Ghi chú: trong PDF, <head> (dòng 8-17) bị thu gọn nên không hiển thị.
        Phần dưới được dựng lại theo home.html; title "Order cart" lấy từ ảnh kết quả] -->
-  <meta charset="utf-8"><title>Order cart</title>
-  <meta name="author" content="Vu Duy Linh"><link rel="icon" type="image/png" href="/image/shopping-cart.png">
+  <meta charset="utf-8">
+  <title>Order cart</title>
+  <meta name="author" content="Vu Duy Linh">
+  <link rel="icon" type="image/png" href="/image/shopping-cart.png">
   <meta name="description" content="Shopping cart with HTML5, CSS3 and Vanilla JavaScript ES6+">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,9 +17,10 @@
 <body class="wrapper">
   <header class="page-header">
     <!-- [Ghi chú: trong PDF, <header> (dòng 20-37) bị thu gọn; dựng lại theo home.html (đúng 16 dòng nội dung)] -->
-    <a class="logo" href="/home.html"><img src="/image/vnsoftware.png" alt="logo"></a>
+    <a class="logo" href="/home.html"><img src="/image/logo.png" alt="logo"></a>
     <h1>Danh sách sản phẩm (Hardcoded)</h1>
     <nav class="mini-nav">
+      <a href="/home.html">← Tiếp tục mua sắm</a>
       <div class="shopping-cart">
         <p class="no-ordered-items">0</p>
         <i class="icon-cart fa fa-shopping-cart"></i>
@@ -40,7 +42,7 @@
       <tfoot class="list-foot"></tfoot>
     </table>
   </main>
-  <footer class="page-footer"> &copy; vdlinh@ctu.edu.vn, 2021</footer>
+  <footer class="page-footer"> &copy; cua hang dien thoai 2026</footer>
   <script src="/js/show-cart.js"></script>
   <script src="/js/authentication.js"></script>
   <script>
@@ -49,4 +51,5 @@
     checkAuthentication();
   </script>
 </body>
+
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký tài khoản</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="wrapper">
+  <header class="page-header">
+    <a class="logo" href="/home.html">Cửa hàng điện thoại</a>
+    <h1>Đăng ký tài khoản</h1>
+  </header>
+
+  <main class="container">
+    <form id="register-form">
+      <div class="form-group">
+        <label for="register-name">Họ và tên</label>
+        <input type="text" id="register-name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="register-password">Mật khẩu</label>
+        <input type="password" id="register-password" minlength="6" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Nhập lại mật khẩu</label>
+        <input type="password" id="confirm-password" required>
+      </div>
+
+      <button type="submit">Đăng ký</button>
+    </form>
+
+    <p style="margin-top: 15px;">
+      Đã có tài khoản? <a href="/page/login.html">Đăng nhập</a>
+    </p>
+  </main>
+
+  <script src="/js/authentication.js"></script>
+</body>
+</html>
