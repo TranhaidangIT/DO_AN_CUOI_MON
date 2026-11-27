@@ -1,96 +1,48 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <title>Đăng ký</title>
-  <meta name="author" content="Vu Duy Linh">
-  <link rel="icon" type="image/png" href="/image/shopping-cart.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký tài khoản</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="wrapper">
   <header class="page-header">
-    <a class="logo" href="/home.html"><img src="/image/vnsoftware.png" alt="logo"></a>
+    <a class="logo" href="/home.html">Cửa hàng điện thoại</a>
     <h1>Đăng ký tài khoản</h1>
-    <nav class="mini-nav">
-      <div class="shopping-cart">
-        <p class="no-ordered-items">0</p>
-        <i class="icon-cart fa fa-shopping-cart"></i>
-      </div>
-      <div id="authentication">
-        <a href="/page/register.html">Đăng ký</a>
-        <a href="/page/login.html">Đăng nhập</a>
-      </div>
-      <div id="user-info" class="hidden">
-        <span id="principal"></span>
-        <a href="#" id="logout">Đăng xuất</a>
-      </div>
-    </nav>
   </header>
 
-  <main class="page-main-2dot1">
-    <div class="container">
-      <h2>Tạo tài khoản mới</h2>
-      <form id="register-form">
-        <div class="form-group">
-          <label for="fullname">Họ và tên</label>
-          <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required>
-        </div>
-        <div class="form-group">
-          <label for="username">Tên đăng nhập</label>
-          <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Mật khẩu</label>
-          <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
-        </div>
-        <div class="form-group">
-          <label for="confirm-password">Xác nhận mật khẩu</label>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required>
-        </div>
-        <div class="form-group">
-          <button type="submit">Đăng ký</button>
-        </div>
-        <p id="register-message"></p>
-        <p>Đã có tài khoản? <a href="/page/login.html">Đăng nhập</a></p>
-      </form>
-    </div>
+  <main class="container">
+    <form id="register-form">
+      <div class="form-group">
+        <label for="register-name">Họ và tên</label>
+        <input type="text" id="register-name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="register-password">Mật khẩu</label>
+        <input type="password" id="register-password" minlength="6" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Nhập lại mật khẩu</label>
+        <input type="password" id="confirm-password" required>
+      </div>
+
+      <button type="submit">Đăng ký</button>
+    </form>
+
+    <p style="margin-top: 15px;">
+      Đã có tài khoản? <a href="/page/login.html">Đăng nhập</a>
+    </p>
   </main>
 
-  <footer class="page-footer"> &copy; vdlinh@ctu.edu.vn, 2021</footer>
-
   <script src="/js/authentication.js"></script>
-  <script>
-    checkAuthentication();
-
-    document.getElementById('register-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const fullname = document.getElementById('fullname').value.trim();
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value;
-      const confirm  = document.getElementById('confirm-password').value;
-      const msg      = document.getElementById('register-message');
-
-      if (password !== confirm) {
-        msg.style.color = 'red';
-        msg.textContent = 'Mật khẩu xác nhận không khớp!';
-        return;
-      }
-      if (localStorage.getItem('user_' + username)) {
-        msg.style.color = 'red';
-        msg.textContent = 'Tên đăng nhập đã tồn tại!';
-        return;
-      }
-
-      localStorage.setItem('user_' + username, JSON.stringify({ fullname, username, password }));
-      msg.style.color = 'green';
-      msg.textContent = 'Đăng ký thành công! Đang chuyển hướng...';
-      setTimeout(() => window.location.href = '/page/login.html', 1500);
-    });
-  </script>
 </body>
-
 </html>
