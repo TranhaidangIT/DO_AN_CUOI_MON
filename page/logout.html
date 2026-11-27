@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Đăng xuất</title>
+  <meta name="author" content="Vu Duy Linh">
+  <link rel="icon" type="image/png" href="/image/shopping-cart.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="wrapper">
+  <header class="page-header">
+    <a class="logo" href="/home.html"><img src="/image/vnsoftware.png" alt="logo"></a>
+    <h1>Đăng xuất</h1>
+    <nav class="mini-nav">
+      <div class="shopping-cart">
+        <p class="no-ordered-items">0</p>
+        <i class="icon-cart fa fa-shopping-cart"></i>
+      </div>
+      <div id="authentication">
+        <a href="/page/register.html">Đăng ký</a>
+        <a href="/page/login.html">Đăng nhập</a>
+      </div>
+      <div id="user-info" class="hidden">
+        <span id="principal"></span>
+        <a href="#" id="logout">Đăng xuất</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main-2dot1">
+    <div class="container">
+      <h2>Bạn đã đăng xuất thành công!</h2>
+      <p style="margin-bottom: 20px;">Cảm ơn bạn đã sử dụng dịch vụ.</p>
+      <div class="form-group">
+        <a href="/page/login.html"><button type="button">Đăng nhập lại</button></a>
+      </div>
+      <div class="form-group">
+        <a href="/home.html"><button type="button" style="background:#17a2b8;">Về trang chủ</button></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer"> &copy; vdlinh@ctu.edu.vn, 2021</footer>
+
+  <script src="/js/authentication.js"></script>
+  <script>
+    // Xóa phiên nếu còn sót
+    sessionStorage.removeItem('loggedInUser');
+    checkAuthentication();
+  </script>
+</body>
+
+</html>
