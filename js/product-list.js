@@ -1,9 +1,4 @@
 
-/*@File: cart.js, Shopping Cart using localStorage
-  @Author: vdlinh@ctu.edu.vn | vdlinh@cit.ctu.edu.vn
-  @Created date: 28-7-2021, updated 05-05-2026 */
-
-
 /* Hàm kiểm tra sản phẩm đã tồn tại trong giỏ hàng chưa.
    Nếu có thì trả về vị trí, nếu chưa có thì trả về -1 */
 function isExistedInCart(item, cartItemArr) {
